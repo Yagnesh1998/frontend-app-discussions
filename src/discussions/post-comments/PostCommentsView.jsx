@@ -30,7 +30,9 @@ import messages from './messages';
 function PostCommentsView({ intl }) {
   const [isLoading, submitDispatch] = useDispatchWithState();
   const { postId } = useParams();
+  console.time('for thread');
   const thread = usePost(postId);
+  console.timeEnd('for thread');
   const commentsStatus = useSelector(selectCommentsStatus);
   const commentsCount = useCommentsCount(postId);
   const history = useHistory();
@@ -63,7 +65,7 @@ function PostCommentsView({ intl }) {
       </div>
     );
   }
-
+  console.log('PostCommentsView');
   return (
     <>
       {!isOnDesktop && (

@@ -36,7 +36,6 @@ function HTMLLoader({
 
   return (
     <div ref={previewRef} className={cssClassName} id={componentId} data-testid={testId} />
-
   );
 }
 
